@@ -68,10 +68,8 @@ fi
 
 <% if host_param_true?('ansible_tower_provisioning') -%>
     <%= save_to_file('/tmp/ansible_provisioning_call.sh', snippet('ansible_tower_callback_script')) %>
-    bash /tmp/ansible_provisioning_call.sh
+    /bin/sh /tmp/ansible_provisioning_call.sh
 <% end -%>
-
-
 
 # UserData still needs to mark the build as finished
 <%= snippet 'built' %>
